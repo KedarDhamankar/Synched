@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="form-box">
+        <div class="signup">
+          <h3 class="signup-msg"><span>Admin Registration</span></h3>
+        </div>
+        <form id="login" class="flex-container" method="POST" action="">
+          <div>
+            <!-- {{ form.username.label()}} -->
+            {% if form.username.errors %}
+                    {{ form.username(class="input-field is-invalid")}}
+                    <div class="invalid-feedback"> 
+                        {% for error in form.username.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.username(class="input-field",placeholder="Admin-Name")}}
+                {% endif %}
+
+          </div>
+          <div >
+            <!-- {{ form.email.label()}} -->
+            {% if form.email.errors %}
+                {{ form.email(class="input-field is-invalid")}}
+                <div class="invalid-feedback"> 
+                    {% for error in form.email.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.email(class="input-field",placeholder="Email")}}
+            {% endif %}
+
+        </div>
+
+            <!-- <input type="email" class="input-field" placeholder="Email ID" required> -->
+            <div >
+              <!-- {{ form.password.label()}} -->
+              {% if form.password.errors %}
+                  {{ form.password(class="input-field is-invalid")}}
+                  <div class="invalid-feedback"> 
+                      {% for error in form.password.errors %}
+                      <span>{{ error }}</span>
+                      {% endfor %}
+                  </div>
+              {% else %}
+               {{ form.password(class="input-field",placeholder="Password")}}
+              {% endif %}
+  
+          </div>
+          <!-- <input type="password" class="input-field" placeholder="Password" required> -->
+          <div >
+            <!-- {{ form.confirm_password.label()}} -->
+            {% if form.confirm_password.errors %}
+                {{ form.confirm_password(class="input-field is-invalid")}}
+                <div class="invalid-feedback"> 
+                    {% for error in form.password.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+             {{ form.confirm_password(class="input-field",placeholder="Confirm Password")}}
+            {% endif %}
+
+        </div>
+          <!-- <input type="password" class="input-field" placeholder="Confirm Password" required> -->
+          <div>
+            {{ form.submit(class="submit-btn")}}
+          </div>
+        </form>
+    </div>
+    <div class="border-top pt-3">
+        <!--if u already have an acc sign in sect-->
+        <small class="text-muted">
+            Already have an account?<a class="ml-2" href="{{ url_for('adminlogin')}}">Sign In</a>
+        </small>
+    </div>
+      {% endblock content %}

@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
+body{
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/0/0e/VJTI_College_Quadrangle.jpg);
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+}
+
+.form-box{
+  position: relative;
+  left: 33%;
+  top: 5%;
+    width: 54%;
+    height: 32rem;
+    position: relative;
+    margin: 6% 9%;
+    background:black;
+    opacity: 0.80;
+    backdrop-filter: blur(35px);
+    padding: 5px;
+    overflow: hidden;
+    color: white;
+
+  }
+  .signup{
+    padding-top: 8%;
+  }
+  .signup-msg{
+    text-align: center;
+    font-family:  'Secular One', sans-serif;
+    font-size: 2rem;
+  }
+  
+  /* #btn{
+    position: absolute;
+    width: 52%;
+    height: 100%;
+    background: #82CD47;
+    border-radius: 30px;
+    transition: .5s;
+  } */
+  .flex-container{
+    top: 100px;
+    position: absolute;
+    width: 280px;
+  }
+  .input-field{
+    padding: 5%;
+    width: 100%;
+    margin: 1px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid rgb(21, 19, 19);
+    outline: none;
+    background: transparent;
+    color: white;
+  }
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(172, 165, 165);
+    opacity: 1; /* Firefox */
+    font-size: 1.1rem;
+  }
+  .submit-btn{
+    width: 80%;
+    padding: 10px 50px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    margin-top: 20%;
+    background: transparent;
+    border: 1px solid #4AD489;
+    outline: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.1rem;
+    font-family:  'Secular One', sans-serif;
+   position: relative;
+   
+  }
+  .submit-btn:hover {
+    background: #4AD489;
+    color: #fff;
+  }
+  .check-box{
+    margin: 30px 10px 30px 0;
+  }
+  #login{
+    left: 13%;
+  }
+  

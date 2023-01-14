@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <div class="form-box">
+        <div class="signup">
+          <h3 class="signup-msg"><span>Welcome to Synched</span></h3>
+        </div>
+        
+        <form id="login" class="flex-container" method="POST" action="">
+            <div >
+                <!-- {{ form.email.label()}} -->
+                {% if form.email.errors %}
+                    {{ form.email(class="input-field is-invalid")}}
+                    <div class="invalid-feedback"> 
+                        {% for error in form.email.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.email(class="input-field",placeholder="Email")}}
+                {% endif %}
+            </div>
+    
+            <div >
+              <!-- {{ form.password.label()}} -->
+              {% if form.password.errors %}
+                  {{ form.password(class="input-field is-invalid")}}
+                  <div class="invalid-feedback"> 
+                      {% for error in form.password.errors %}
+                      <span>{{ error }}</span>
+                      {% endfor %}
+                  </div>
+              {% else %}
+               {{ form.password(class="input-field",placeholder="Password")}}
+              {% endif %}
+    
+          </div>
+          <br><br>
+             
+          <div>
+            {{ form.submit(class="submit-btn")}}
+            <!--submit btn-->
+           </div>
+           
+         <div class="flex-container"><br>
+            <small class="">
+                Need an account?<a class="ml-2" href="{{ url_for('adminreg')}}">Sign Up</a>
+            </small>
+         </div>
+    
+          
+    {% endblock content %}

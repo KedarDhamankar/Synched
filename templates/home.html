@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Synched</title>
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/b844cd2a66.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a href="#" class="logo">
+            <img src="static/images/logo.jpeg">
+            <span class="nav-item1">Synched</span>
+          </a></li>
+        <li><a href="#">
+            <i class="fas fa-solid fa-house"></i>
+            <span class="nav-item">Home</span>
+          </a></li>
+        <li class="special"><a href="#">
+
+            <i class="fas fa-solid fa-right-to-bracket"></i>
+
+            <span class="nav-item">Login/Register</span>
+
+          </a>
+          <div class="dropdown-content">
+            <a href="/commlogin">Committee Login</a>
+            <a href="/commreg">Committee Register</a>
+            <a href="/adminlog">Admin Login</a>
+            <a href="/adminreg">Admin Register</a>
+          </div>
+        </li>
+
+
+        <li><a href="/timetable">
+            <i class="fas fa-solid fa-table"></i>
+            <span class="nav-item">Time Table</span>
+          </a></li>
+        <li><a href="/map">
+            <i class="fas fa-solid fa-location-dot"></i>
+            <span class="nav-item">VJTI Map</span>
+          </a></li>
+
+        <li><a href="#" class="logout">
+            <i class="fas fa-solid fa-right-from-bracket"></i>
+            <span class="nav-item">Log out</span>
+          </a></li>
+      </ul>
+    </nav>
+
+
+    <section class="main">
+      <div class="main-top">
+        <h1>Committees</h1>
+      </div>
+      <div class="users">
+        <div class="card">
+          <img src="static/images/Prati_logo.jpeg">
+          <h4>Pratibimb</h4>
+          <p>Cultural Committee</p>
+          <span>A National-level Annual Cultural Festival of VJTI. All the cultural activities are organised by
+            us.</span>
+          <a href="https://www.instagram.com/pratibimbvjti/"><button>Profile</button></a>
+        </div>
+        <div class="card">
+          <img src="static/images/Techno_logo.jpeg">
+          <h4>Technovanza</h4>
+          <p>Techno-Managerial Committee</p>
+          <span>One of Asia's Largest Techno-managerial festival with the motto of taking technology to society.</span>
+          <a href="https://www.instagram.com/technovanza/"><button>Profile</button></a>
+        </div>
+        <div class="card">
+          <img src="static/images/Enthu_logo.jpeg">
+          <h4>Enthusia</h4>
+          <p>Sports Committee</p>
+          <span>A National-level sports festival of VJTI. Organises intercollege and interbranch sports fests throughout
+            the year.</span>
+          <a href="https://www.instagram.com/enthusiavjti/"><button>Profile</button></a>
+        </div>
+        <div class="card">
+          <img src="static/images/Ranga_logo.jpeg">
+          <h4>Rangawardhan</h4>
+          <p>Marathi Cultural Committee</p>
+          <span>रंगवर्धन हे व्हीजेटीआय, मुंबईचे मराठी सांस्कृतिक रंगमंच आहे.मराठी राजभाषेस अबाधित ठेवणे हेच आपले ध्येय
+            !!</span>
+          <a href="https://www.instagram.com/rangawardhan/"><button>Profile</button></a>
+        </div>
+        <div class="card">
+          <img src="static/images/Ecell_logo.jpeg">
+          <h4>Ecell</h4>
+          <p>Entrepreneurship Cell</p>
+          <span>They organise workshops and guest lectures with important personalities in the business industry to
+            nurture students interested in the field.</span>
+          <a href="https://www.instagram.com/ecellvjti/"><button>Profile</button></a>
+        </div>
+        <div class="card">
+          <img src="static/images/COC_logo.jpeg">
+          <h4>Community Of Coders</h4>
+          <p>coding committee </p>
+          <span>IMAGINE | BELIEVE | ACHIEVE</span>
+          <span>To help students interested in the field of development and programming to help them advance their
+            careers.</span>
+          <a href="https://www.instagram.com/coc_vjti/"><button>Profile</button></a>
+        </div>
+        <div class="card">
+          <img src="static/images/IEEE_logo.jpeg">
+          <h4>IEEE</h4>
+          <p>Institute of Electrical and Electronics</p>
+          <span>Committee which organises electronics workshops and works on IOT projects and research and development of current
+            innovatory trends.</span>
+          <a href="https://www.instagram.com/ieeevjti/"><button>Profile</button></a>
+        </div>
+        <div class="card">
+          <img src="static/images/SRA_logo.jpeg">
+          <h4>SRA</h4>
+          <p>Society Of Robotics and Automation</p>
+          <span>SRA aims to create awareness and promotes robotics among students at VJTI and other leading colleges in
+            Mumbai. ideate , innovate , inspire motto</span>
+          <a href="https://www.instagram.com/sra_vjti/"><button>Profile</button></a>
+        </div>
+      </div>
+    </section>
+</body>
+
+</html>

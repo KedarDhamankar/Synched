@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="form-box">
+  <div class="signup">
+    <h3 class="signup-msg"><span>Welcome to Synched</span></h3>
+  </div>
+
+  <form id="login" class="flex-container" method="POST" action="">
+    <div> 
+      {{ form.id(class="input-field",placeholder="Committee ID")}}
+
+  </div>
+   
+    <div > 
+     {{ form.password(class="input-field",placeholder="Password")}}
+
+  </div>
+
+<div class="form-group">
+  {{ form.submit(class="submit-btn")}} 
+  <!--submit btn-->
+ </div>
+
+    <div class="">
+      <small class="">
+        Need an account?<a class="ml-2" href="{{ url_for('commreg')}}">Sign Up</a>
+      </small>
+  </div>
+   
+  </form> 
+ 
+    {% endblock content %}
+
+        
+    
