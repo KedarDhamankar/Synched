@@ -185,13 +185,47 @@ def logout():
     return redirect(url_for('index'))
 
 #Admin Dashboard page
-@app.route("/admindash")
+@app.route("/admindash", methods = ['GET','POST'])
 def admindash():
-    return render_template('admindash.html')
-
+    csr=mysql.connection.cursor()
+    resultValue=csr.execute("SELECT * FROM users where status=1")
+    if resultValue>0:
+        eventDetails= csr.fetchall()
+        if request.method=='POST':
+            response=request.form
+            add = response['add']
+            # print('hi')
+            # print(add)
+            if add != None:
+                csr.execute("UPDATE users SET status=%s WHERE request_number=%s", (2,add))
+            subtract=response['subtract']
+            if subtract != None:
+                csr.execute("UPDATE users SET status=%s WHERE request_number=%s", (0,subtract))
+            mysql.connection.commit()
+            csr.close()
+        # return redirect(url_for('admindash'))
+    return render_template('admindash.html', event_Details=eventDetails)
+    
 #Committee Dashboard page
-@app.route("/committeedash")
+@app.route("/committeedash", methods=['POST','GET'])
 def committeedash():
+    if request.method=='POST':
+        details=request.form
+        name=details['name']
+        id=details['id']
+        event=details['event']
+        event_desc=details['event_desc']
+        date=details['date']
+        start=details['start']
+        end=details['end']
+        venue=details['venue']
+        reqr=details['reqr']
+        request_number=details['request_number']
+        csr=mysql.connection.cursor()
+        csr.execute("INSERT INTO users(name, id, event, event_desc, date, start, end, venue, reqr, request_number) VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)", (name, id, event, event_desc, date, start, end, venue, reqr, request_number))
+        mysql.connection.commit()
+        csr.close()
+        return redirect(url_for('committeedash'))
     return render_template('commdash.html')
 
 #VJTI Map
@@ -205,6 +239,23 @@ def vjti_map():
 def index():
     return render_template('home.html')
 
+@app.route('/timetable')
+def calendar():
+    crsr = mysql.connection.cursor()
+    # cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    result= crsr.execute("SELECT event, start, end FROM users WHERE status = 2")
+    if result>0:
+        # event = crsr.fetchall()
+        event=crsr.fetchone()
+    crsr.close()
+    print(event)
+    name=event['event']
+    date=event['date']
+    # start= event['start']
+    # end=event['end']
+    # data={'Event':name, 'Date': date, 'Start': start, 'End':end}
+    data={'Event':name, 'Date': date, 'End date': date}
+    return render_template('calendar.html', events=data)
 
 #Run app
 if __name__ == '__main__':
